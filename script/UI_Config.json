@@ -1,0 +1,31 @@
+{
+	"output_file": "settings.json",
+	"OpenDonateLink": {
+		"type": "button",
+		"label": "Donate",
+		"tooltip": "Donate to support development",
+		"function": "OpenDonateLink",
+		"wsevent": "EVENT_NONE"
+	},
+	"OpenFollowOnTwitchLink": {
+		"type": "button",
+		"label": "Follow Me On Twitch",
+		"tooltip": "Get Medal",
+		"function": "OpenFollowOnTwitchLink",
+		"wsevent": "EVENT_NONE"
+	},
+	"OpenReadMeLink": {
+		"type": "button",
+		"label": "Open ReadMe",
+		"tooltip": "Open ReadMe file",
+		"function": "OpenReadMeLink",
+		"wsevent": "EVENT_NONE"
+	},
+	"OpenScriptUpdater": {
+		"type": "button",
+		"label": "Check For Updates",
+		"tooltip": "Check for updates",
+		"function": "OpenScriptUpdater",
+		"wsevent": "EVENT_NONE"
+	}
+}
