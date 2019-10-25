@@ -27,7 +27,7 @@ PROJECT_NAME="${opt_project_name:-"${CI_PROJECT_NAME}"}";
 BUILD_VERSION=${CI_BUILD_VERSION:-"1.0.0-snapshot"};
 DOCKER_ORG="camalot";
 tag="${DOCKER_ORG}/${PROJECT_NAME}";
-FOLDER_NAME="TwitchTeam";
+FOLDER_NAME="CommandFunctions";
 
 [[ -p "${PROJECT_NAME// }" ]] && __error "'-p' (project name) attribute is required.";
 [[ -p "${BUILD_VERSION// }" ]] && __error "'-v' (version) attribute is required.";
@@ -36,7 +36,7 @@ mkdir -p "${WORKSPACE}/temp/";
 mkdir -p "${WORKSPACE}/dist/";
 cp -r "${WORKSPACE}/script" "${WORKSPACE}/temp/";
 cp "${WORKSPACE}/README.md" "${WORKSPACE}/temp/script/";
-sed -i "s/Version = \"1.0.0-snapshot\"/Version = \"${BUILD_VERSION}\"/g" "${WORKSPACE}/temp/script/TwitchTeam_StreamlabsSystem.py";
+sed -i "s/Version = \"1.0.0-snapshot\"/Version = \"${BUILD_VERSION}\"/g" "${WORKSPACE}/temp/script/CommandFunctions_StreamlabsParameter.py";
 
 
 # Download the latest version of the updater
