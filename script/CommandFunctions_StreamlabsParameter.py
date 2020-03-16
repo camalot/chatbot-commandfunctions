@@ -53,18 +53,23 @@ def Unload():
     return
 
 def Parse(parseString, user, target, message):
-    resultString = parseString
+    try:
+        resultString = parseString or ""
 
-    resultString = ParseCustomApiJson(parseString, user, target, message)
-    resultString = ObsSceneParse(parseString, user, target, message)
-    resultString = ObsSourceParse(parseString, user, target, message)
-    ### LAST
-    resultString = ParseReplace(parseString, user, target, message)
-    resultString = StopStreamParse(parseString, user, target, message)
-    return resultString
+        resultString = ParseCustomApiJson(
+            parseString, user or "", target or "", message or "")
+        resultString = ObsSceneParse(parseString, user or "", target or "", message or "")
+        resultString = ObsSourceParse(parseString, user or "", target or "", message or "")
+        ### LAST
+        resultString = ParseReplace(parseString, user or "", target or "", message or "")
+        resultString = StopStreamParse(parseString, user or "", target or "", message or "")
+        return resultString or ""
+    except Exception as e:
+        Parent.Log(ScriptName, str(e))
+        return parseString
 
 def ObsSceneParse(parseString, user, target, message):
-    resultString = parseString
+    resultString = parseString or ""
     # $scene --name="my scene"
     if "$scene" in resultString:
 
@@ -101,7 +106,7 @@ def ObsSceneParse(parseString, user, target, message):
     return resultString
 
 def ObsSourceParse(parseString, user, target, message):
-    resultString = parseString
+    resultString = parseString or ""
     # $OBSsource("source", "enabled")
     # $OBSsource("source", "enabled", "scene")
     if "$source" in resultString:
@@ -163,7 +168,7 @@ def ParseReplace(parseString, user, target, message):
     # EXAMPLE: $replace --input $customapijson(url, foo.bar) --find some string --replace another-string
     #   INPUT: { "foo": { "bar": "we found some string" } }
     #  OUTPUT: we found another-string
-    resultString = parseString
+    resultString = parseString or ""
     if "$replace" in resultString:
         result = REPLACE_REGEX.search(resultString)
         if result:
@@ -185,7 +190,7 @@ def ParseReplace(parseString, user, target, message):
     return resultString
 
 def ParseCustomApiJson(parseString, user, target, message):
-    resultString = parseString
+    resultString = parseString or ""
     if "$customapijson" in resultString:
         result = CUSTOMAPIJSON_REGEX.search(resultString)
         if result:
