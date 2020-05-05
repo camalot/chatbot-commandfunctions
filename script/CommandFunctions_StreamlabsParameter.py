@@ -34,8 +34,6 @@ Description = "Command Functions that let you replace, call json urls, etc"
 Creator = "DarthMinos"
 Version = "1.0.0-snapshot"
 Repo = "camalot/chatbot-commandfunctions"
-
-DonateLink = "https://paypal.me/camalotdesigns"
 ReadMeFile = "https://github.com/" + Repo + "/blob/develop/ReadMe.md"
 
 REPLACE_REGEX = re.compile(r'\$replace\s+(--input[=\s](.+))\s+(--find[=\s](.+))\s+(--replace[=\s](.+))', re.U)
@@ -343,6 +341,12 @@ def OpenReadMeLink():
     return
 
 
-def OpenDonateLink():
-    os.startfile(DonateLink)
+def OpenPaypalDonateLink():
+    os.startfile("https://paypal.me/camalotdesigns/10")
+    return
+def OpenGithubDonateLink():
+    os.startfile("https://github.com/sponsors/camalot")
+    return
+def OpenTwitchDonateLink():
+    os.startfile("http://twitch.tv/darthminos/subscribe")
     return
