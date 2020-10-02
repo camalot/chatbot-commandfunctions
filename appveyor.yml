@@ -1,0 +1,21 @@
+version: 1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
+image: Ubuntu
+init:
+- sh: >-
+    #! /usr/bin/env bash
+
+    set -x;
+install:
+- sh: >-
+    #! /usr/bin/env bash
+
+    set -x;
+build_script:
+- sh: >-
+    #!/usr/bin/env bash
+
+    set -x;
+
+    ./.deploy/build.sh

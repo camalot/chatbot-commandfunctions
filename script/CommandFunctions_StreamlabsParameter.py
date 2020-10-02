@@ -350,3 +350,6 @@ def OpenGithubDonateLink():
 def OpenTwitchDonateLink():
     os.startfile("http://twitch.tv/darthminos/subscribe")
     return
+def OpenDiscordLink():
+    os.startfile("https://discord.com/invite/vzdpjYk")
+    return
