@@ -1,4 +1,5 @@
 # CHATBOT COMMAND FUNCTIONS
+[![CHATBOT COMMAND FUNCTIONS](https://github.com/camalot/chatbot-commandfunctions/actions/workflows/build.yml/badge.svg)](https://github.com/camalot/chatbot-commandfunctions/actions/workflows/build.yml)
 
 Adds functions to use in your commands
 
@@ -104,5 +105,3 @@ $scene --name="SOURCE_NAME" [--enabled="true"|--seconds=7] [--scene="SCENE_NAME]
 - `enabled`: The enabled state of the source
 - `seconds`: The number of seconds to show the source before disabling
 - `scene`: The scene which the source resides. 
-
-
